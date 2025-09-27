@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Presupuesto de Productos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 style="text-align:center;color:#232323;margin-top:30px;">Presupuesto de Monitores</h1>
+  <div class="form-box">
+    <form id="formulario">
+      <div class="form-row">
+        <label for="nombre">Cliente:</label>
+        <input type="text" id="nombre" required style="flex:1;">
+      </div>
+      <table class="productos-table">
+        <thead>
+          <tr>
+            <th>Cantidad</th>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody id="productos-tbody"></tbody>
+      </table>
+      <div class="btns-row">
+        <button type="button" id="calcular-btn">Calcular Total</button>
+        <button type="button" id="comprar-btn">Imprimir Presupuesto</button>
+      </div>
+    </form>
+    <div id="resultado" class="hidden" style="margin-top:24px;">
+      <h2>Resumen</h2>
+      <div id="resumen"></div>
+      <button onclick="exportarPDF()">Exportar a PDF</button>
+    </div>
+  </div>
+  <!-- jsPDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+  
